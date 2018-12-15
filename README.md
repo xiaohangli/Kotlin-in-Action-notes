@@ -1,3 +1,9 @@
-# My Awesome Book
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+**简介：**
+
+&emsp;&emsp;这是我读《Kotlin 实战》的笔记，主要是用于自我学习，在以后遗忘的时候也能进行参考。
+
+
+
+
+
