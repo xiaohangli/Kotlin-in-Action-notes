@@ -5,4 +5,5 @@
 * [2 Kotlin 基础](2.Kotlin 基础.md)
 * [3 函数的定义与调用](3.函数的定义与调用.md)
 * [4 类、对象和接口](4.类、对象和接口.md)
+* [5Lambda 编程](5lambda-bian-cheng.md)
 
