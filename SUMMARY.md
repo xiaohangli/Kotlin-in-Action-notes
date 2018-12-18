@@ -6,4 +6,5 @@
 * [3 函数的定义与调用](3.函数的定义与调用.md)
 * [4 类、对象和接口](4.类、对象和接口.md)
 * [5 Lambda 编程](5.Lambda 编程.md)
+* [6 Kotlin的类型系统](6-kotlinde-lei-xing-xi-tong.md)
 
