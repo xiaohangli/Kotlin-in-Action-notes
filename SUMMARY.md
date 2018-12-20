@@ -7,5 +7,5 @@
 * [4 类、对象和接口](4.类、对象和接口.md)
 * [5 Lambda 编程](5.Lambda 编程.md)
 * [6 Kotlin的类型系统](6.Kotlin的类型系统.md)
-* [7 运算符重载及其他约定](7-yun-suan-fu-zhong-zai-ji-qi-ta-yue-ding.md)
+* [7 运算符重载及其他约定](7.运算符重载及其他约定.md)
 
