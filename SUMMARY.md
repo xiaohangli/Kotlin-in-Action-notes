@@ -8,4 +8,5 @@
 * [5 Lambda 编程](5.Lambda 编程.md)
 * [6 Kotlin的类型系统](6.Kotlin的类型系统.md)
 * [7 运算符重载及其他约定](7.运算符重载及其他约定.md)
+* [8 高阶函数:Lambda作为形参和返回值](8-gao-jie-han-65703a-lambda-zuo-wei-xing-can-he-fan-hui-zhi.md)
 
