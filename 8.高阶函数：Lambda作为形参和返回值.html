@@ -1,0 +1,357 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>8 高阶函数:Lambda作为形参和返回值 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="7.运算符重载及其他约定.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1.Kotlin：定义和目的.html">
+            
+                <a href="1.Kotlin：定义和目的.html">
+            
+                    
+                    1 Kotlin：定义和目的
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2.Kotlin 基础.html">
+            
+                <a href="2.Kotlin 基础.html">
+            
+                    
+                    2 Kotlin 基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="3.函数的定义与调用.html">
+            
+                <a href="3.函数的定义与调用.html">
+            
+                    
+                    3 函数的定义与调用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="4.类、对象和接口.html">
+            
+                <a href="4.类、对象和接口.html">
+            
+                    
+                    4 类、对象和接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="5.Lambda 编程.html">
+            
+                <a href="5.Lambda 编程.html">
+            
+                    
+                    5 Lambda 编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="6.Kotlin的类型系统.html">
+            
+                <a href="6.Kotlin的类型系统.html">
+            
+                    
+                    6 Kotlin的类型系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="7.运算符重载及其他约定.html">
+            
+                <a href="7.运算符重载及其他约定.html">
+            
+                    
+                    7 运算符重载及其他约定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9" data-path="8.高阶函数：Lambda作为形参和返回值.html">
+            
+                <a href="8.高阶函数：Lambda作为形参和返回值.html">
+            
+                    
+                    8 高阶函数:Lambda作为形参和返回值
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >8 高阶函数:Lambda作为形参和返回值</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="81-&#x58F0;&#x660E;&#x9AD8;&#x9636;&#x51FD;&#x6570;">8.1 &#x58F0;&#x660E;&#x9AD8;&#x9636;&#x51FD;&#x6570;</h2>
+<p>&#x2003;&#x2003;&#x9AD8;&#x9636;&#x51FD;&#x6570;&#x5C31;&#x662F;&#x4EE5;&#x53E6;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x6216;&#x8005;&#x8FD4;&#x56DE;&#x503C;&#x5F97;&#x51FD;&#x6570;&#x3002;<br>&#x2003;&#x2003;&#x6807;&#x51C6;&#x5E93;&#x4E2D;&#x7684;filter&#x51FD;&#x6570;&#x5C06;&#x4E00;&#x4E2A;&#x5224;&#x65AD;&#x5F0F;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x9AD8;&#x9636;&#x51FD;&#x6570;&#x3002;</p>
+<h4 id="&#x2003;-811-&#x51FD;&#x6570;&#x7C7B;&#x578B;">&#x2003; 8.1.1 &#x51FD;&#x6570;&#x7C7B;&#x578B;</h4>
+<p>&#x2003;&#x2003; &#x58F0;&#x660E;&#x51FD;&#x6570;&#x7C7B;&#x578B;&#xFF0C;&#x9700;&#x8981;&#x5C06;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x653E;&#x5728;&#x62EC;&#x53F7;&#x4E2D;&#xFF0C;&#x7D27;&#x63A5;&#x7740;&#x662F;&#x4E00;&#x4E2A;&#x7BAD;&#x5934;&#x548C;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#xFF0C;&#x5982;&#x4E0B;<br>&#x2003;&#x2003; &#xFF08;Int&#xFF0C;String&#xFF09; -&gt;Unit</p>
+<h4 id="&#x2003;-812-&#x8C03;&#x7528;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;">&#x2003; 8.1.2 &#x8C03;&#x7528;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;</h4>
+<h4 id="&#x2003;-813-&#x5728;java&#x4E2D;&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x7C7B;">&#x2003; 8.1.3 &#x5728;java&#x4E2D;&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x7C7B;</h4>
+<p>&#x2003;&#x2003; &#x53EF;&#x4EE5;&#x5728;java&#x4EE3;&#x7801;&#x4E2D;&#x4F7F;&#x7528;kotlin&#x6807;&#x51C6;&#x5E93;&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x3002;</p>
+<h4 id="&#x2003;-814-&#x51FD;&#x6570;&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;&#x9ED8;&#x8BA4;&#x503C;&#x548C;null&#x503C;">&#x2003; 8.1.4 &#x51FD;&#x6570;&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;&#x9ED8;&#x8BA4;&#x503C;&#x548C;null&#x503C;</h4>
+<p>&#x2003;&#x2003; &#x58F0;&#x660E;&#x51FD;&#x6570;&#x7C7B;&#x578B;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x7279;&#x6B8A;&#x7684;&#x8BED;&#x6CD5;&#x2014;&#x2014;&#x53EA;&#x9700;&#x8981;&#x628A;lambda&#x4F5C;&#x4E3A;&#x503C;&#x653E;&#x5728;&#x4E8C;&#x53F7;&#x540E;&#x9762;&#x3002;</p>
+<h4 id="&#x2003;-815-&#x8FD4;&#x56DE;&#x51FD;&#x6570;&#x7684;&#x51FD;&#x6570;">&#x2003; 8.1.5 &#x8FD4;&#x56DE;&#x51FD;&#x6570;&#x7684;&#x51FD;&#x6570;</h4>
+<p>&#x2003;&#x2003; &#x9AD8;&#x9636;&#x51FD;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x6539;&#x8FDB;&#x4EE3;&#x7801;&#x7ED3;&#x6784;&#x548C;&#x51CF;&#x5C11;&#x91CD;&#x590D;&#x4EE3;&#x7801;&#x7684;&#x5229;&#x5668;&#x3002;</p>
+<h4 id="&#x2003;-816-&#x901A;&#x8FC7;lambda&#x53BB;&#x9664;&#x91CD;&#x590D;&#x4EE3;&#x7801;">&#x2003; 8.1.6 &#x901A;&#x8FC7;lambda&#x53BB;&#x9664;&#x91CD;&#x590D;&#x4EE3;&#x7801;</h4>
+<h2 id="82-&#x5185;&#x8054;&#x51FD;&#x6570;&#xFF1A;&#x6D88;&#x9664;lambda&#x5E26;&#x6765;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x5F00;&#x9500;">8.2 &#x5185;&#x8054;&#x51FD;&#x6570;&#xFF1A;&#x6D88;&#x9664;lambda&#x5E26;&#x6765;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x5F00;&#x9500;</h2>
+<p>&#x2003;&#x2003; lambda&#x8868;&#x8FBE;&#x5F0F;&#x4F1A;&#x88AB;&#x6B63;&#x5E38;&#x5730;&#x7F16;&#x8BD1;&#x6210;&#x533F;&#x540D;&#x7C7B;&#x3002;&#x8FD9;&#x8868;&#x793A;&#x6BCF;&#x8C03;&#x7528;&#x4E00;&#x6B21;lambda&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x4E00;&#x4E2A;&#x989D;&#x5916;&#x7684;&#x7C7B;&#x5C31;&#x4F1A;&#x88AB;&#x521B;&#x5EFA;&#x3002;&#x800C;&#x4E14;&#x5982;&#x679C;lambda&#x6355;&#x6349;&#x4E86;&#x67D0;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x90A3;&#x4E48;&#x6BCF;&#x6B21;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#x90FD;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<h4 id="&#x2003;-821-&#x5185;&#x8054;&#x51FD;&#x6570;&#x5982;&#x4F55;&#x8FD0;&#x4F5C;">&#x2003; 8.2.1 &#x5185;&#x8054;&#x51FD;&#x6570;&#x5982;&#x4F55;&#x8FD0;&#x4F5C;</h4>
+<p>&#x2003;&#x2003; &#x5F53;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x88AB;&#x58F0;&#x660E;&#x4E3A;inline&#x65F6;&#xFF0C;&#x5B83;&#x7684;&#x51FD;&#x6570;&#x4F53;&#x662F;&#x5185;&#x8054;&#x7684;&#x2014;&#x2014;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x51FD;&#x6570;&#x4F53;&#x4F1A;&#x88AB;&#x76F4;&#x63A5;&#x66FF;&#x6362;&#x5230;&#x51FD;&#x6570;&#x88AB;&#x8C03;&#x7528;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x88AB;&#x6B63;&#x5E38;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="&#x2003;-822-&#x5185;&#x8054;&#x51FD;&#x6570;&#x7684;&#x9650;&#x5236;">&#x2003; 8.2.2 &#x5185;&#x8054;&#x51FD;&#x6570;&#x7684;&#x9650;&#x5236;</h4>
+<p>&#x2003;&#x2003; &#x53C2;&#x6570;&#x5982;&#x679C;&#x88AB;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x6216;&#x8005;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7ED9;&#x53E6;&#x4E00;&#x4E2A;inline&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x662F;&#x53EF;&#x4EE5;&#x88AB;&#x5185;&#x8054;&#x7684;&#x3002;</p>
+<h4 id="&#x2003;-823-&#x5185;&#x8054;&#x96C6;&#x5408;&#x64CD;&#x4F5C;">&#x2003; 8.2.3 &#x5185;&#x8054;&#x96C6;&#x5408;&#x64CD;&#x4F5C;</h4>
+<p>&#x2003;&#x2003; &#x5728;kotlin&#x4E2D;&#xFF0C;filter&#x51FD;&#x6570;&#x88AB;&#x58F0;&#x660E;&#x4E3A;&#x5185;&#x8054;&#x51FD;&#x6570;&#x3002;<br>&#x2003;&#x2003; asSequence&#x53EA;&#x5728;&#x5904;&#x7406;&#x5927;&#x91CF;&#x6570;&#x636E;&#x7684;&#x96C6;&#x5408;&#x65F6;&#x6709;&#x7528;&#xFF0C;&#x5C0F;&#x7684;&#x96C6;&#x5408;&#x53EF;&#x4EE5;&#x7528;&#x666E;&#x901A;&#x7684;&#x96C6;&#x5408;&#x64CD;&#x4F5C;&#x5904;&#x7406;&#x3002;</p>
+<h4 id="&#x2003;-824-&#x51B3;&#x5B9A;&#x4F55;&#x65F6;&#x5C06;&#x51FD;&#x6570;&#x58F0;&#x660E;&#x4E3A;&#x5185;&#x8054;">&#x2003; 8.2.4 &#x51B3;&#x5B9A;&#x4F55;&#x65F6;&#x5C06;&#x51FD;&#x6570;&#x58F0;&#x660E;&#x4E3A;&#x5185;&#x8054;</h4>
+<p>&#x2003;&#x2003; &#x4F7F;&#x7528;inline&#x5173;&#x952E;&#x5B57;&#x53EA;&#x80FD;&#x63D0;&#x9AD8;lambda&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;&#x7684;&#x6027;&#x80FD;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x60C5;&#x51B5;&#x9700;&#x8981;&#x989D;&#x5916;&#x7684;&#x5EA6;&#x91CF;&#x548C;&#x7814;&#x7A76;&#x3002;</p>
+<h4 id="&#x2003;-825-&#x4F7F;&#x7528;&#x5185;&#x8054;lambda&#x7BA1;&#x7406;&#x8D44;&#x6E90;">&#x2003; 8.2.5 &#x4F7F;&#x7528;&#x5185;&#x8054;lambda&#x7BA1;&#x7406;&#x8D44;&#x6E90;</h4>
+<p>&#x2003;&#x2003; withLock&#x51FD;&#x6570;<br>&#x2003;&#x2003; use&#x51FD;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x6269;&#x5C55;&#x51FD;&#x6570;&#xFF0C;&#x88AB;&#x7528;&#x6765;&#x64CD;&#x4F5C;&#x53EF;&#x5173;&#x95ED;&#x7684;&#x8D44;&#x6E90;&#x3002;</p>
+<h2 id="83-&#x9AD8;&#x9636;&#x51FD;&#x6570;&#x4E2D;&#x7684;&#x63A7;&#x5236;&#x6D41;">8.3 &#x9AD8;&#x9636;&#x51FD;&#x6570;&#x4E2D;&#x7684;&#x63A7;&#x5236;&#x6D41;</h2>
+<h4 id="&#x2003;-831-lambda&#x4E2D;&#x7684;&#x8FD4;&#x56DE;&#x8BED;&#x53E5;&#xFF1A;&#x4ECE;&#x4E00;&#x4E2A;&#x5C01;&#x95ED;&#x7684;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x3002;">&#x2003; 8.3.1 lambda&#x4E2D;&#x7684;&#x8FD4;&#x56DE;&#x8BED;&#x53E5;&#xFF1A;&#x4ECE;&#x4E00;&#x4E2A;&#x5C01;&#x95ED;&#x7684;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x3002;</h4>
+<p>&#x2003;&#x2003; &#x5982;&#x679C;&#x4F60;&#x5728;lambda&#x4E2D;&#x4F7F;&#x7528;return&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x5B83;&#x4F1A;&#x4ECE;&#x8C03;&#x7528;lambda&#x7684;&#x51FD;&#x6570;&#x4E2D;&#x8FD4;&#x56DE;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x4ECE;lambda&#x4E2D;&#x8FD4;&#x56DE;&#xFF0C;&#x8FD9;&#x6837;&#x7684;return&#x8BED;&#x53E5;&#x53EB;&#x4F5C;&#x975E;&#x5C40;&#x90E8;&#x8FD4;&#x56DE;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4ECE;&#x4E00;&#x4E2A;&#x6BD4;&#x5305;&#x542B;return&#x7684;&#x4EE3;&#x7801;&#x5757;&#x66F4;&#x5927;&#x7684;&#x4EE3;&#x7801;&#x5757;&#x4E2D;&#x8FD4;&#x56DE;&#x4E86;&#x3002;<br>&#x2003;&#x2003; &#x53EA;&#x6709;&#x5728;&#x4EE5;lambda&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;&#x662F;&#x5185;&#x8054;&#x51FD;&#x6570;&#x7684;&#x65F6;&#x5019;&#x624D;&#x80FD;&#x4ECE;&#x66F4;&#x5916;&#x5C42;&#x7684;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x3002;</p>
+<h4 id="&#x2003;-832-&#x4ECE;lambda&#x8FD4;&#x56DE;&#xFF1A;&#x4F7F;&#x7528;&#x6807;&#x7B7E;&#x8FD4;&#x56DE;">&#x2003; 8.3.2 &#x4ECE;lambda&#x8FD4;&#x56DE;&#xFF1A;&#x4F7F;&#x7528;&#x6807;&#x7B7E;&#x8FD4;&#x56DE;</h4>
+<h4 id="&#x2003;-833-&#x533F;&#x540D;&#x51FD;&#x6570;&#xFF1A;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x5C40;&#x90E8;&#x8FD4;&#x56DE;">&#x2003; 8.3.3 &#x533F;&#x540D;&#x51FD;&#x6570;&#xFF1A;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x5C40;&#x90E8;&#x8FD4;&#x56DE;</h4>
+<p>&#x2003;&#x2003; &#x5728;&#x533F;&#x540D;&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x4E0D;&#x5E26;&#x6807;&#x7B7E;&#x7684;return&#x8868;&#x8FBE;&#x5F0F;&#x4F1A;&#x4ECE;&#x533F;&#x540D;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4ECE;&#x5305;&#x542B;&#x533F;&#x540D;&#x51FD;&#x6570;&#x7684;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="7.运算符重载及其他约定.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 7 运算符重载及其他约定">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"8 高阶函数:Lambda作为形参和返回值","level":"1.9","depth":1,"previous":{"title":"7 运算符重载及其他约定","level":"1.8","depth":1,"path":"7.运算符重载及其他约定.md","ref":"7.运算符重载及其他约定.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"8.高阶函数：Lambda作为形参和返回值.md","mtime":"2018-12-24T13:14:16.192Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-24T13:15:13.956Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
