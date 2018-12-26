@@ -1,0 +1,374 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>9 泛型 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="8.高阶函数：Lambda作为形参和返回值.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="1.Kotlin：定义和目的.html">
+            
+                <a href="1.Kotlin：定义和目的.html">
+            
+                    
+                    1 Kotlin：定义和目的
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2.Kotlin 基础.html">
+            
+                <a href="2.Kotlin 基础.html">
+            
+                    
+                    2 Kotlin 基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="3.函数的定义与调用.html">
+            
+                <a href="3.函数的定义与调用.html">
+            
+                    
+                    3 函数的定义与调用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="4.类、对象和接口.html">
+            
+                <a href="4.类、对象和接口.html">
+            
+                    
+                    4 类、对象和接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="5.Lambda 编程.html">
+            
+                <a href="5.Lambda 编程.html">
+            
+                    
+                    5 Lambda 编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="6.Kotlin的类型系统.html">
+            
+                <a href="6.Kotlin的类型系统.html">
+            
+                    
+                    6 Kotlin的类型系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="7.运算符重载及其他约定.html">
+            
+                <a href="7.运算符重载及其他约定.html">
+            
+                    
+                    7 运算符重载及其他约定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="8.高阶函数：Lambda作为形参和返回值.html">
+            
+                <a href="8.高阶函数：Lambda作为形参和返回值.html">
+            
+                    
+                    8 高阶函数:Lambda作为形参和返回值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10" data-path="9.泛型.html">
+            
+                <a href="9.泛型.html">
+            
+                    
+                    9 泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >9 泛型</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#x2003;&#x2003; Kotlin&#x5F15;&#x5165;&#x7684;&#x65B0;&#x6982;&#x5FF5;&#xFF1A;&#x5B9E;&#x5316;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#x548C;&#x58F0;&#x660E;&#x70B9;&#x53D8;&#x578B;&#x3002;<br>&#x2003;&#x2003; &#x5B9E;&#x5316;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#x5141;&#x8BB8;&#x4F60;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x5185;&#x8054;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x4E2D;&#x5F15;&#x7528;&#x4F5C;&#x4E3A;&#x7C7B;&#x578B;&#x5B9E;&#x53C2;&#x7684;&#x5177;&#x4F53;&#x7C7B;&#x578B;&#x3002;<br>&#x2003;&#x2003; &#x58F0;&#x660E;&#x70B9;&#x53D8;&#x91CF;&#x53EF;&#x4EE5;&#x8BF4;&#x660E;&#x4E00;&#x4E2A;&#x5E26;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#x7684;&#x6CDB;&#x578B;&#x7C7B;&#x578B;&#xFF0C;&#x662F;&#x5426;&#x662F;&#x53E6;&#x4E00;&#x4E2A;&#x6CDB;&#x578B;&#x7C7B;&#x578B;&#x7684;&#x5B57;&#x7C7B;&#x578B;&#x6216;&#x8005;&#x8D85;&#x7C7B;&#x578B;&#x3002;  </p>
+<h2 id="91-&#x6CDB;&#x578B;&#x7C7B;&#x578B;&#x53C2;&#x6570;">9.1 &#x6CDB;&#x578B;&#x7C7B;&#x578B;&#x53C2;&#x6570;</h2>
+<p>&#x2003;&#x2003; &#x6CDB;&#x578B;&#x5141;&#x8BB8;&#x4F60;&#x5B9A;&#x4E49;&#x5E26;&#x7C7B;&#x578B;&#x5F62;&#x53C2;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x5F53;&#x8FD9;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x5B9E;&#x4F8B;&#x88AB;&#x521B;&#x5EFA;&#x51FA;&#x6765;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7C7B;&#x578B;&#x5F62;&#x53C2;&#x88AB;&#x66FF;&#x6362;&#x6210;&#x79F0;&#x4E3A;&#x7C7B;&#x578B;&#x5B9E;&#x53C2;&#x7684;&#x5177;&#x4F53;&#x7C7B;&#x578B;&#x3002;</p>
+<h4 id="&#x2003;-911-&#x6CDB;&#x578B;&#x51FD;&#x6570;&#x548C;&#x5C5E;&#x6027;">&#x2003; 9.1.1 &#x6CDB;&#x578B;&#x51FD;&#x6570;&#x548C;&#x5C5E;&#x6027;</h4>
+<p>&#x2003;&#x2003; &#x666E;&#x901A;&#xFF08;&#x5373;&#x975E;&#x6269;&#x5C55;&#xFF09;&#x5C5E;&#x6027;&#x4E0D;&#x80FD;&#x62E5;&#x6709;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#xFF0C;&#x4E0D;&#x80FD;&#x5728;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5C5E;&#x6027;&#x4E2D;&#x5B58;&#x50A8;&#x591A;&#x4E2A;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x503C;&#xFF0C;&#x56E0;&#x6B64;&#x58F0;&#x660E;&#x6CDB;&#x578B;&#x975E;&#x6269;&#x5C55;&#x51FD;&#x6570;&#x6CA1;&#x6709;&#x610F;&#x4E49;&#x3002;</p>
+<h4 id="&#x2003;-912-&#x58F0;&#x660E;&#x6CDB;&#x578B;&#x7C7B;">&#x2003; 9.1.2 &#x58F0;&#x660E;&#x6CDB;&#x578B;&#x7C7B;</h4>
+<p>&#x2003;&#x2003; Kotlin&#x7684;&#x58F0;&#x660E;&#x548C;java&#x7684;&#x4E00;&#x6837;</p>
+<h4 id="&#x2003;-913-&#x7C7B;&#x578B;&#x53C2;&#x6570;&#x7EA6;&#x675F;">&#x2003; 9.1.3 &#x7C7B;&#x578B;&#x53C2;&#x6570;&#x7EA6;&#x675F;</h4>
+<p>&#x2003;&#x2003; &#x7C7B;&#x578B;&#x53C2;&#x6570;&#x7EA6;&#x675F;&#x53EF;&#x4EE5;&#x9650;&#x5236;&#x4F5C;&#x4E3A;&#xFF08;&#x6CDB;&#x578B;&#xFF09;&#x7C7B;&#x548C;&#xFF08;&#x6CDB;&#x578B;&#xFF09;&#x51FD;&#x6570;&#x7684;&#x7C7B;&#x578B;&#x5B9E;&#x53C2;&#x7684;&#x7C7B;&#x578B;&#x3002;</p>
+<h4 id="&#x2003;-914-&#x8BA9;&#x7C7B;&#x578B;&#x5F62;&#x53C2;&#x975E;&#x7A7A;">&#x2003; 9.1.4 &#x8BA9;&#x7C7B;&#x578B;&#x5F62;&#x53C2;&#x975E;&#x7A7A;</h4>
+<p>&#x2003;&#x2003; &#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x4E0A;&#x754C;&#x7684;&#x7C7B;&#x578B;&#x5F62;&#x53C2;&#x5C06;&#x4F1A;&#x4F7F;&#x7528;Any&#xFF1F;&#x8FD9;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;&#x4E0A;&#x754C;&#x3002;<br>&#x2003;&#x2003; &#x7EA6;&#x675F;<t:any>&#x786E;&#x4FDD;&#x4E86;&#x7C7B;&#x578B;T&#x6C38;&#x8FDC;&#x90FD;&#x662F;&#x975E;&#x7A7A;&#x7C7B;&#x578B;&#x3002;</t:any></p>
+<h2 id="92-&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x6CDB;&#x578B;&#xFF1A;&#x64E6;&#x9664;&#x548C;&#x5B9E;&#x5316;&#x7C7B;&#x578B;&#x53C2;&#x6570;">9.2 &#x8FD0;&#x884C;&#x65F6;&#x7684;&#x6CDB;&#x578B;&#xFF1A;&#x64E6;&#x9664;&#x548C;&#x5B9E;&#x5316;&#x7C7B;&#x578B;&#x53C2;&#x6570;</h2>
+<p>&#x2003;&#x2003; JVM&#x4E0A;&#x7684;&#x6CDB;&#x578B;&#x4E00;&#x822C;&#x662F;&#x901A;&#x8FC7;&#x7C7B;&#x578B;&#x64E6;&#x9664;&#x5B9E;&#x73B0;&#x7684;&#x3002;&#x53EF;&#x4EE5;&#x58F0;&#x660E;&#x4E00;&#x4E2A;inline&#x51FD;&#x6570;&#xFF0C;&#x8BA9;&#x5176;&#x7C7B;&#x578B;&#x5B9E;&#x53C2;&#x4E0D;&#x88AB;&#x64E6;&#x9664;&#xFF08;kotlin&#x672F;&#x8BED;&#xFF0C;&#x79F0;&#x4F5C;&#x5B9E;&#x5316;&#xFF09;&#x3002;</p>
+<h4 id="&#x2003;-921-&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x6CDB;&#x578B;&#xFF1A;&#x7C7B;&#x578B;&#x68C0;&#x67E5;&#x548C;&#x8F6C;&#x6362;">&#x2003; 9.2.1 &#x8FD0;&#x884C;&#x65F6;&#x7684;&#x6CDB;&#x578B;&#xFF1A;&#x7C7B;&#x578B;&#x68C0;&#x67E5;&#x548C;&#x8F6C;&#x6362;</h4>
+<p>&#x2003;&#x2003; &#x64E6;&#x9664;&#x7C7B;&#x578B;&#x4FE1;&#x606F;&#x7684;&#x7EA6;&#x675F;&#xFF1A;&#x56E0;&#x4E3A;&#x7C7B;&#x578B;&#x5B9E;&#x53C2;&#x6CA1;&#x6709;&#x88AB;&#x5B58;&#x50A8;&#x4E0B;&#x6765;&#xFF0C;&#x4F60;&#x4E0D;&#x80FD;&#x68C0;&#x67E5;&#x5B83;&#x4EEC;&#x3002;<br>&#x2003;&#x2003; &#x68C0;&#x67E5;&#x4E00;&#x4E2A;&#x503C;&#x662F;&#x5426;&#x662F;&#x5217;&#x8868;&#xFF1A;&#x4F7F;&#x7528;&#x7279;&#x6B8A;&#x7684;&#x661F;&#x53F7;&#x6295;&#x5F71;&#x8BED;&#x6CD5;&#x6765;&#x505A;&#x68C0;&#x67E5;<br>&#x2003;&#x2003; if(value is List&lt;*&gt;){...}</p>
+<h4 id="&#x2003;-922-&#x58F0;&#x660E;&#x5E26;&#x5B9E;&#x5316;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;">&#x2003; 9.2.2 &#x58F0;&#x660E;&#x5E26;&#x5B9E;&#x5316;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;</h4>
+<p>&#x2003;&#x2003; &#x5185;&#x8054;&#x51FD;&#x6570;&#x7684;&#x7C7B;&#x578B;&#x5F62;&#x53C2;&#x80FD;&#x591F;&#x88AB;&#x5B9E;&#x5316;&#x3002;<br>&#x2003;&#x2003; &#x7F16;&#x8BD1;&#x5668;&#x628A;&#x5B9E;&#x73B0;&#x5185;&#x8054;&#x51FD;&#x6570;&#x7684;&#x5B57;&#x8282;&#x7801;&#x5668;&#x63D2;&#x5165;&#x5230;&#x6BCF;&#x4E00;&#x4E2A;&#x8C03;&#x7528;&#x53D1;&#x751F;&#x7684;&#x5730;&#x65B9;&#x3002;&#x6BCF;&#x6B21;&#x4F60;&#x8C03;&#x7528;&#x5E26;&#x5B9E;&#x4F8B;&#x5316;&#x7C7B;&#x578B;&#x5F62;&#x53C2;&#x7684;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x90FD;&#x77E5;&#x9053;&#x8FD9;&#x6B21;&#x7279;&#x5B9A;&#x8C03;&#x7528;&#x4E2D;&#x4F5C;&#x7C7B;&#x578B;&#x5B9E;&#x53C2;&#x7684;&#x786E;&#x5207;&#x7C7B;&#x578B;&#x3002;<br>&#x2003;&#x2003; &#x5E26;reified&#x7C7B;&#x578B;&#x53C2;&#x6570;&#x7684;inline&#x51FD;&#x6570;&#x4E0D;&#x80FD;&#x5728;java&#x4EE3;&#x7801;&#x4E2D;&#x8C03;&#x7528;&#xFF0C;&#x666E;&#x901A;&#x7684;&#x5185;&#x8054;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x50CF;&#x5E38;&#x89C4;&#x51FD;&#x6570;&#x90A3;&#x6837;&#x5728;java&#x4E2D;&#x8C03;&#x7528;&#x2014;&#x2014;&#x2014;&#x2014;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x88AB;&#x8C03;&#x7528;&#x800C;&#x4E0D;&#x80FD;&#x88AB;&#x5185;&#x8054;&#x3002;</p>
+<h4 id="&#x2003;-923-&#x4F7F;&#x7528;&#x5B9E;&#x5316;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#x4EE3;&#x66FF;&#x7C7B;&#x5F15;&#x7528;">&#x2003; 9.2.3 &#x4F7F;&#x7528;&#x5B9E;&#x5316;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#x4EE3;&#x66FF;&#x7C7B;&#x5F15;&#x7528;</h4>
+<p>&#x2003;&#x2003; ::class.java &#x7684;&#x8BED;&#x6CD5;&#x5C55;&#x73B0;&#x4E86;&#x5982;&#x4F55;&#x83B7;&#x53D6;java.lang.Class&#x5BF9;&#x5E94;&#x7684;kotlin&#x7C7B;&#xFF0C;&#x8FD9;&#x548C;java&#x4E2D;&#x7684;.class&#x662F;&#x5B8C;&#x5168;&#x7B49;&#x540C;&#x7684;&#x3002;</p>
+<h4 id="&#x2003;-924-&#x5B9E;&#x5316;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#x7684;&#x9650;&#x5236;">&#x2003; 9.2.4 &#x5B9E;&#x5316;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#x7684;&#x9650;&#x5236;</h4>
+<h2 id="93-&#x53D8;&#x578B;&#xFF1A;&#x6CDB;&#x578B;&#x548C;&#x5B50;&#x7C7B;&#x578B;&#x5316;">9.3 &#x53D8;&#x578B;&#xFF1A;&#x6CDB;&#x578B;&#x548C;&#x5B50;&#x7C7B;&#x578B;&#x5316;</h2>
+<p>&#x2003;&#x2003; &#x53D8;&#x578B;&#xFF1A;&#x62E5;&#x6709;&#x76F8;&#x540C;&#x57FA;&#x7840;&#x7C7B;&#x578B;&#x548C;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x5B9E;&#x53C2;&#x7684;&#xFF08;&#x6CDB;&#x578B;&#xFF09;&#x7C7B;&#x578B;&#x4E4B;&#x95F4;&#x662F;&#x5982;&#x4F55;&#x5173;&#x8054;&#x7684;&#x3002;</p>
+<h4 id="&#x2003;-931-&#x4E3A;&#x4EC0;&#x4E48;&#x5B58;&#x5728;&#x53D8;&#x578B;&#xFF1A;&#x7ED9;&#x51FD;&#x6570;&#x4F20;&#x9012;&#x5B9E;&#x53C2;">&#x2003; 9.3.1 &#x4E3A;&#x4EC0;&#x4E48;&#x5B58;&#x5728;&#x53D8;&#x578B;&#xFF1A;&#x7ED9;&#x51FD;&#x6570;&#x4F20;&#x9012;&#x5B9E;&#x53C2;</h4>
+<p>&#x2003;&#x2003; &#x628A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x5217;&#x8868;&#x4F20;&#x9012;&#x7ED9;&#x671F;&#x671B;Any&#x5BF9;&#x8C61;&#x5217;&#x8868;&#x7684;&#x51FD;&#x6570;&#x662F;&#x5426;&#x5B89;&#x5168;&#xFF1F;&#x5982;&#x679C;&#x51FD;&#x6570;&#x6DFB;&#x52A0;&#x6216;&#x8005;&#x66FF;&#x6362;&#x4E86;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x5C31;&#x662F;&#x4E0D;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x6837;&#x4F1A;&#x4EA7;&#x751F;&#x7C7B;&#x578B;&#x4E0D;&#x4E00;&#x81F4;&#x7684;&#x53EF;&#x80FD;&#x6027;&#x3002;</p>
+<h4 id="&#x2003;-932-&#x7C7B;&#x3001;&#x7C7B;&#x578B;&#x548C;&#x5B50;&#x7C7B;&#x578B;">&#x2003; 9.3.2 &#x7C7B;&#x3001;&#x7C7B;&#x578B;&#x548C;&#x5B50;&#x7C7B;&#x578B;</h4>
+<p>&#x2003;&#x2003; &#x5B50;&#x7C7B;&#x578B;&#x548C;&#x8D85;&#x7C7B;&#x578B;&#x7684;&#x533A;&#x522B;</p>
+<h4 id="&#x2003;-933-&#x534F;&#x53D8;&#xFF1A;&#x4FDD;&#x7559;&#x5B50;&#x7C7B;&#x578B;&#x5316;&#x5173;&#x7CFB;">&#x2003; 9.3.3 &#x534F;&#x53D8;&#xFF1A;&#x4FDD;&#x7559;&#x5B50;&#x7C7B;&#x578B;&#x5316;&#x5173;&#x7CFB;</h4>
+<p>&#x2003;&#x2003; &#x5982;&#x679C;A&#x662F;B&#x7684;&#x5B50;&#x7C7B;&#x578B;&#xFF0C;&#x90A3;&#x4E48;List&lt; A&gt;&#x5C31;&#x662F;List&lt; B&gt;&#x7684;&#x5B50;&#x7C7B;&#x578B;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x7C7B;&#x6216;&#x8005;&#x63A5;&#x53E3;&#x88AB;&#x79F0;&#x4E3A;&#x534F;&#x53D8;&#x7684;&#x3002;<br>&#x2003;&#x2003; &#x5728;kotlin&#x4E2D;&#xFF0C;&#x8981;&#x58F0;&#x660E;&#x7C7B;&#x5728;&#x67D0;&#x4E2A;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#x4E0A;&#x4E0A;&#x53EF;&#x4EE5;&#x534F;&#x53D8;&#x7684;&#xFF0C;&#x5728;&#x8BE5;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#x7684;&#x540D;&#x79F0;&#x524D;&#x9762;&#x52A0;&#x4E0A;out&#x5173;&#x952E;&#x5B57;&#x5373;&#x53EF;&#x3002;<br>&#x2003;&#x2003; &#x5728;&#x7C7B;&#x6210;&#x5458;&#x7684;&#x58F0;&#x660E;&#x4E2D;&#xFF0C;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#x7684;&#x4F7F;&#x7528;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;in&#x4F4D;&#x7F6E;&#x548C;out&#x4F4D;&#x7F6E;&#x3002;<br>&#x2003;&#x2003; &#x51FD;&#x6570;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x578B;&#x53EB;&#x4F5C;in&#x4F4D;&#x7F6E;&#xFF0C;&#x800C;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x53EB;&#x4F5C;out&#x4F4D;&#x7F6E;&#x3002;<br>&#x2003;&#x2003; &#x7C7B;&#x578B;&#x53C2;&#x6570;T &#x4E0A;&#x7684;&#x5173;&#x952E;&#x5B57;out&#x6709;&#x4E24;&#x5C42;&#x542B;&#x4E49;&#xFF1A;&#x5B50;&#x7C7B;&#x578B;&#x5316;&#x4F1A;&#x88AB;&#x4FDD;&#x7559;&#x3002;T&#x53EA;&#x80FD;&#x5728;out&#x4F4D;&#x7F6E;&#x3002;<br>&#x2003;&#x2003; &#x6784;&#x9020;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x65E2;&#x4E0D;&#x5728;in&#x4F4D;&#x7F6E;&#x4E5F;&#x4E0D;&#x5728;out&#x4F4D;&#x7F6E;&#x3002;</p>
+<h4 id="&#x2003;-934-&#x9006;&#x53D8;&#xFF1A;&#x53CD;&#x8F6C;&#x5B50;&#x7C7B;&#x578B;&#x5316;&#x5173;&#x7CFB;">&#x2003; 9.3.4 &#x9006;&#x53D8;&#xFF1A;&#x53CD;&#x8F6C;&#x5B50;&#x7C7B;&#x578B;&#x5316;&#x5173;&#x7CFB;</h4>
+<p>&#x2003;&#x2003; &#x9006;&#x53D8;&#x7684;&#x6982;&#x5FF5;&#x53EF;&#x4EE5;&#x88AB;&#x770B;&#x6210;&#x662F;&#x534F;&#x53D8;&#x7684;&#x955C;&#x50CF;&#x3002;<br>&#x2003;&#x2003; &#x5BF9;&#x534F;&#x53D8;&#x7C7B;&#x578B;&#x6765;&#x8BF4;&#xFF0C;&#x5B50;&#x7C7B;&#x578B;&#x5316;&#x4FDD;&#x7559;&#x4E86;&#xFF0C;&#x4F46;&#x9006;&#x53D8;&#x7C7B;&#x578B;&#x3001;&#x5B50;&#x7C7B;&#x578B;&#x5316;&#x53CD;&#x8F6C;&#x4E86;&#x3002;</p>
+<h4 id="&#x2003;-935-&#x4F7F;&#x7528;&#x70B9;&#x53D8;&#x578B;&#xFF1A;&#x5728;&#x7C7B;&#x578B;&#x51FA;&#x73B0;&#x7684;&#x5730;&#x65B9;&#x6307;&#x5B9A;&#x53D8;&#x578B;">&#x2003; 9.3.5 &#x4F7F;&#x7528;&#x70B9;&#x53D8;&#x578B;&#xFF1A;&#x5728;&#x7C7B;&#x578B;&#x51FA;&#x73B0;&#x7684;&#x5730;&#x65B9;&#x6307;&#x5B9A;&#x53D8;&#x578B;</h4>
+<p>&#x2003;&#x2003; &#x5728;&#x7C7B;&#x58F0;&#x660E;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x80FD;&#x591F;&#x6307;&#x5B9A;&#x53D8;&#x578B;&#x4FEE;&#x9970;&#x7B26;&#x662F;&#x5F88;&#x65B9;&#x4FBF;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4E9B;&#x4FEE;&#x9970;&#x7B26;&#x4F1A;&#x5E94;&#x7528;&#x5230;&#x6240;&#x6709;&#x7C7B;&#x88AB;&#x4F7F;&#x7528;&#x7684;&#x5730;&#x65B9;&#x3002;&#x8FD9;&#x88AB;&#x79F0;&#x4F5C;&#x58F0;&#x660E;&#x70B9;&#x53D8;&#x578B;&#x3002;<br>&#x2003;&#x2003; &#x7F16;&#x8BD1;&#x5668;&#x7981;&#x6B62;&#x8C03;&#x7528;&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#x505A;&#x5B9E;&#x53C2;&#xFF08;&#x7C7B;&#x578B;&#xFF09;&#x7684;&#x90A3;&#x4E9B;&#x65B9;&#x6CD5;&#xFF08;&#x5728;in&#x4F4D;&#x7F6E;&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#xFF09;&#x3002;<br>&#x2003;&#x2003; Kotlin&#x4E2D;&#x7684;MutableList &lt; out T&gt;&#x548C;java&#x4E2D;&#x7684;MutableList &lt; ? extends T &gt; &#x662F;&#x4E00;&#x4E2A;&#x610F;&#x601D;&#x3002;in&#x6295;&#x5F71;&#x7684;mutableList &lt; in T &gt;&#x5BF9;&#x5E94;&#x5230;java&#x7684;MutableList &lt; ? supper T &gt;</p>
+<h4 id="&#x2003;-936-&#x661F;&#x53F7;&#x6295;&#x5F71;&#xFF1A;&#x4F7F;&#x7528;&#x4EE3;&#x66FF;&#x7C7B;&#x578B;&#x53C2;&#x6570;">&#x2003; 9.3.6 &#x661F;&#x53F7;&#x6295;&#x5F71;&#xFF1A;&#x4F7F;&#x7528;*&#x4EE3;&#x66FF;&#x7C7B;&#x578B;&#x53C2;&#x6570;</h4>
+<p>&#x2003;&#x2003; &#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#x661F;&#x53F7;&#x6295;&#x5F71;&#x8BED;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x5B83;&#x6765;&#x8868;&#x660E;&#x4F60;&#x4E0D;&#x77E5;&#x9053;&#x5173;&#x4E8E;&#x6CDB;&#x578B;&#x5B9E;&#x53C2;&#x7684;&#x4EFB;&#x4F55;&#x6D88;&#x606F;&#x3002;<br>&#x2003;&#x2003; MutableList &lt; * &gt; &#x6295;&#x5F71;&#x6210;&#x4E86;MutableList &lt; out Any? &gt;:&#x5F53;&#x4F60;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x4FE1;&#x606F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8BFB;&#x53D6;Any&#xFF1F;&#x7C7B;&#x578B;&#x7684;&#x5143;&#x7D20;&#x4ECD;&#x7136;&#x662F;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5411;&#x5217;&#x8868;&#x4E2D;&#x5199;&#x5165;&#x5143;&#x7D20;&#x662F;&#x4E0D;&#x5B89;&#x5168;&#x7684;&#x3002;<br>&#x2003;&#x2003; &#x5BF9;&#x50CF;Consume &lt; in T &gt;&#x8FD9;&#x6837;&#x7684;&#x9006;&#x53D8;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#x6765;&#x8BF4;&#xFF0C;&#x661F;&#x53F7;&#x6295;&#x5F71;&#x7B49;&#x4EF7;&#x4E8E; &lt; in Noting &gt;&#x3002;<br>&#x2003;&#x2003; &#x661F;&#x53F7;&#x6295;&#x5F71;&#x7684;&#x8BED;&#x6CD5;&#xFF1A;&#x53EA;&#x80FD;&#x7528;&#x5728;&#x5BF9;&#x6CDB;&#x578B;&#x7C7B;&#x578B;&#x5B9E;&#x53C2;&#x7684;&#x786E;&#x5207;&#x503C;&#x4E0D;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x5730;&#x65B9;&#xFF1A;&#x53EA;&#x8981;&#x662F;&#x4F7F;&#x7528;&#x751F;&#x4EA7;&#x503C;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x4E14;&#x4E0D;&#x5173;&#x5FC3;&#x90A3;&#x4E9B;&#x503C;&#x5F97;&#x7C7B;&#x578B;&#x3002; </p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="8.高阶函数：Lambda作为形参和返回值.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 8 高阶函数:Lambda作为形参和返回值">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"9 泛型","level":"1.10","depth":1,"previous":{"title":"8 高阶函数:Lambda作为形参和返回值","level":"1.9","depth":1,"path":"8.高阶函数：Lambda作为形参和返回值.md","ref":"8.高阶函数：Lambda作为形参和返回值.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"9.泛型.md","mtime":"2018-12-26T14:54:32.171Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-26T14:55:11.725Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
